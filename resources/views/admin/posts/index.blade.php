@@ -2,7 +2,19 @@
 
 @section('content')
 <div class="container">
-    
+    <div class="d-flex justify-content-between">
+        <h1>All Posts</h1>
+        <div>
+            <a class="btn btn-primary" href="{{route('admin.posts.create')}}">Add Post</a>
+        </div>
+    </div>
+
+    @if(session('message'))
+    <div class="alert alert-success">
+        {{session('message')}}
+    </div>
+    @endif
+
     <table class="table table-striped table-inverse table-responsive">
         <thead class="thead-inverse">
             <tr>
@@ -20,7 +32,44 @@
                     <td>{{$post->title}}</td>
                     <td>{{$post->slug}}</td>
                     <td><img width="150" src="{{$post->cover}}" alt="Cover Image {{$post->title}}"></td>
-                    <td>View - Edit - Delete</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="{{route('admin.posts.show',$post->id)}}">View</a>
+                        <a class="btn btn-secondary btn-sm" href="{{route('admin.posts.edit',$post->id)}}">Edit</a>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-post-{{$post->id}}">
+                            Delete
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="delete-post-{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="modelTitle-{{$post->id}}" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Delete Current Post</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to delete this post???
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        
+                                        <form action="{{route('admin.posts.destroy',$post->id)}}" method="post">
+
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button type="submit" class="btn btn-danger">Confirm</button>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
                 @empty
                 <tr>
