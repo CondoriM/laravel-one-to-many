@@ -33,8 +33,8 @@
                     <td>{{$post->slug}}</td>
                     <td><img width="150" src="{{$post->cover}}" alt="Cover Image {{$post->title}}"></td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="{{route('admin.posts.show',$post->id)}}">View</a>
-                        <a class="btn btn-secondary btn-sm" href="{{route('admin.posts.edit',$post->id)}}">Edit</a>
+                        <a class="btn btn-primary btn-sm" href="{{route('admin.posts.show',$post->slug)}}">View</a>
+                        <a class="btn btn-secondary btn-sm" href="{{route('admin.posts.edit',$post->slug)}}">Edit</a>
 
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-post-{{$post->id}}">
@@ -57,7 +57,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         
-                                        <form action="{{route('admin.posts.destroy',$post->id)}}" method="post">
+                                        <form action="{{route('admin.posts.destroy',$post->slug)}}" method="post">
 
                                             @csrf
                                             @method('DELETE')

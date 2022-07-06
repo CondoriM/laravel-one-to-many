@@ -5,7 +5,7 @@
 <h2>Edit {{$post->title}}</h2>
 @include('partials.errors')
 
-<form action="{{route('admin.posts.update',$post->id)}}" method="post">
+<form action="{{route('admin.posts.update',$post->slug)}}" method="post">
     @csrf
     @method('PUT')
     <div class="form-group">
