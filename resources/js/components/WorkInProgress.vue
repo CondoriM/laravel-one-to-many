@@ -7,7 +7,7 @@
                 Work In Progress
             </h1>
 
-            <p class="lead">Website  coming soon!!!</p>
+            <p class="lead">Website coming soon!!!</p>
             <hr class="my-2">
             <p>More info</p>
             <p class="lead">
