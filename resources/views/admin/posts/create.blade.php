@@ -20,6 +20,16 @@
         <small id="coverHelper" class="text-muted">Type the post cover</small>
       </div>
 
+    <div class="form-group">
+      <label for="category_id">Categories</label>
+      <select class="form-control" name="category_id" id="category_id">
+        <option value="">Select a Category</option>
+        @foreach ($categories as $category)
+          <option value="{{category->id}}">{{$category->name}}</option>        
+        @endforeach
+      </select>
+    </div>
+
       <div class="form-group mb-4">
         <label for="content">Content</label>
         <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="content" rows="4">

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Post extends Model
 {
-    protected $fillable = ['title','content','slug','cover'];
+    protected $fillable = ['title','content','slug','cover','category_id'];
 
     public static function generateSlug($title)
     {
@@ -22,6 +22,6 @@ class Post extends Model
      */
     public function category(): BelongsTo
     {
-        return $this->belongsTo(App\Models\Category::class);
+        return $this->belongsTo(Category::class);
     }
 }
