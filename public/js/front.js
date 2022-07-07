@@ -37561,7 +37561,7 @@ var staticRenderFns = [
             _vm._v("\r\n                Work In Progress\r\n            "),
           ]),
           _vm._v(" "),
-          _c("p", { staticClass: "lead" }, [_vm._v("Website  coming soon!!!")]),
+          _c("p", { staticClass: "lead" }, [_vm._v("Website coming soon!!!")]),
           _vm._v(" "),
           _c("hr", { staticClass: "my-2" }),
           _vm._v(" "),
@@ -50047,7 +50047,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\LARAVEL\laravel-boolpress\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\LARAVEL\laravel-one-to-many\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
